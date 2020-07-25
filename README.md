@@ -1,5 +1,5 @@
  # A Knight’s Tour 
- 
+Java functional approach using Warnsdorff algorithm
 
  ## Algorithms
  ### Backtracking 

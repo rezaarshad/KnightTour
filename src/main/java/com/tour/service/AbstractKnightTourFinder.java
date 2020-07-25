@@ -8,12 +8,14 @@ import com.tour.model.Point;
 import java.util.Objects;
 import java.util.Optional;
 
+import static com.google.common.base.Preconditions.checkArgument;
+
 public abstract class AbstractKnightTourFinder implements KnightTourFinder {
 
     @Override
     public Optional<KnightTour> findAny(ChessBoard chessBoard, KnightTourParameters knightTourParameters) {
-        Objects.requireNonNull(chessBoard, "chessBoard must not be null");
-        Objects.requireNonNull(knightTourParameters, "knightTourParameters must not be null");
+        checkArgument(chessBoard != null);
+        checkArgument(knightTourParameters != null);
 
         Point startingPoint = chessBoard.getPoint(knightTourParameters.getStartingPoint().getRow(), knightTourParameters.getStartingPoint().getCol());
         startingPoint.setStep(1);

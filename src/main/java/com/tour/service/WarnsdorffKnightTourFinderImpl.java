@@ -22,7 +22,7 @@ public class WarnsdorffKnightTourFinderImpl extends AbstractKnightTourFinder imp
         while (retries++ < knightTourParameters.getMaxRetry() && !solutionIsFound) {
             found = warnsdorff(startingPoint, chessBoard, knightTourParameters);
             //reset result and steps if solution not found for next retry
-            if (!solutionIsFound) {
+            if (!found) {
                 chessBoard.resetSteps();
                 startingPoint = chessBoard.getPoint(startingPoint.getRow(), startingPoint.getCol());
                 startingPoint.setStep(1);

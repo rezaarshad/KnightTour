@@ -18,9 +18,9 @@ public class WarnsdorffKnightTourFinderImpl extends AbstractKnightTourFinder imp
     protected boolean find(Point startingPoint, ChessBoard chessBoard, KnightTourParameters knightTourParameters) {
 
         int retries = 0;
-        boolean solutionIsFound = false;
+        boolean found = false;
         while (retries++ < knightTourParameters.getMaxRetry() && !solutionIsFound) {
-            solutionIsFound = warnsdorff(startingPoint, chessBoard, knightTourParameters);
+            found = warnsdorff(startingPoint, chessBoard, knightTourParameters);
             //reset result and steps if solution not found for next retry
             if (!solutionIsFound) {
                 chessBoard.resetSteps();
@@ -29,7 +29,7 @@ public class WarnsdorffKnightTourFinderImpl extends AbstractKnightTourFinder imp
             }
         }
 
-        return solutionIsFound;
+        return found;
     }
 
     private boolean warnsdorff(Point startingPoint, ChessBoard chessBoard, KnightTourParameters knightTourParameters) {

@@ -34,9 +34,6 @@ To compile and run the project, ensure you have Java 8 and Maven installed.
 ```bash
 mvn clean compile
 mvn test
-
-## Running the Project
-```bash
 mvn clean compile exec:java -Dexec.mainClass="com.tour.Main"
 
 
